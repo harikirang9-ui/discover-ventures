@@ -1,65 +1,135 @@
 import Image from "next/image";
+import AnimatedStat from "./components/AnimatedStat";
+import PartnershipCard from "./components/PartnershipCard";
+import WhyChooseSection from "./components/WhyChooseSection";
+import FadeInFromRight from "./components/FadeInFromRight";
+import FadeIn from "./components/FadeIn";
+import TestimonialsCarousel from "./components/TestimonialsCarousel";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-background">
+      {/* ===== HERO SECTION ===== */}
+      <section className="bg-navy relative overflow-hidden">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Hero Content */}
+        <div className="relative z-10 px-6 md:px-16 lg:px-28 pt-16 pb-24 md:pt-24 md:pb-32 lg:pt-32 lg:pb-40">
+          <div className="max-w-3xl">
+            <FadeIn>
+              <h1 className="font-serif text-blue-accent text-3xl md:text-4xl lg:text-[52px] lg:leading-[53px] mb-4">
+                Discover Ventures
+              </h1>
+            </FadeIn>
+            <FadeIn delay={150}>
+              <p className="font-serif text-white text-2xl md:text-3xl lg:text-[52px] lg:leading-[62px] mb-18 whitespace-nowrap">
+                Your long-term fundraising partner
+              </p>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <p className="font-serif text-white text-lg md:text-xl lg:text-2xl regular mb-6">
+                Ready to raise capital?
+              </p>
+            </FadeIn>
+            <FadeIn delay={450}>
+              <a
+                href="#pitch"
+                className="inline-block bg-white text-[#233F88] text-sm md:text-base px-10 py-3 hover:bg-white/90 transition-colors"
+              >
+                Share your pitch
+              </a>
+            </FadeIn>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        {/* Hero Image */}
+        <div className="absolute right-0 bottom-0 md:w-[60%] lg:w-[55%] h-[70%] hidden md:block">
+          <Image
+            src="https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/hero%20image.png"
+            alt="City skyline"
+            fill
+            className="object-contain object-right-bottom"
+            sizes="(max-width: 768px) 0vw, 65vw"
+            quality={50}
+            priority
+          />
+        </div>
+      </section>
+
+      {/* ===== STATS SECTION ===== */}
+      <section id="about" className="bg-background py-12 md:py-16 lg:py-20 px-6 md:px-16 lg:px-28">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-navy-dark/30">
+          {[
+            { value: "Top 5", label: "Ranked IB in India", fadeOnly: true },
+            { value: "70%+", label: "Deal Closure Rate", fadeOnly: true },
+            { value: "$600 Mn+", label: "Transaction Value", fadeOnly: false },
+            { value: "90+", label: "Transactions", fadeOnly: false },
+          ].map((stat) => (
+            <AnimatedStat key={stat.label} value={stat.value} label={stat.label} fadeOnly={stat.fadeOnly} />
+          ))}
+        </div>
+      </section>
+
+      {/* ===== ENDURING PARTNERSHIPS ===== */}
+      <section id="transactions" className="bg-white py-16 md:py-20 lg:py-24 px-6 md:px-16 lg:px-28 overflow-hidden">
+        <FadeIn>
+          <h2 className="font-serif text-navy-dark text-3xl md:text-4xl lg:text-[50px] lg:leading-[53px] mb-10 md:mb-14">
+            Enduring Partnerships
+          </h2>
+        </FadeIn>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <FadeIn delay={0}>
+            <PartnershipCard
+              name="Dehaat"
+              subtitle="Series A, B, C, D, E and 5 acquisitions"
+              image="https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Dehaat.png"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <PartnershipCard
+              name="FruBon"
+              subtitle="Seed, Pre-Series A, Series A"
+              image="https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Frubon.png"
+            />
+          </FadeIn>
+          <FadeIn delay={300}>
+            <PartnershipCard
+              name="Pickrr"
+              subtitle="Series A, B"
+              image="https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Pickrr.png"
+            />
+          </FadeIn>
         </div>
-      </main>
+        <FadeIn>
+          <a
+            href="/transactions"
+            className="inline-block font-medium text-navy-dark text-base md:text-lg lg:text-[22px] underline mt-8 md:mt-12 hover:text-navy transition-colors"
+          >
+            View our all transactions
+          </a>
+        </FadeIn>
+      </section>
+
+      {/* ===== WHY CHOOSE SECTION ===== */}
+      <WhyChooseSection />
+
+      {/* ===== TESTIMONIALS SECTION ===== */}
+      <section id="insights" className="bg-background py-16 md:py-20 lg:py-24 px-6 md:px-16 lg:px-28">
+        <FadeInFromRight>
+          <h2 className="font-serif text-navy-dark text-3xl md:text-4xl lg:text-[50px] lg:leading-[53px] mb-10 md:mb-14">
+            Testimonials
+          </h2>
+        </FadeInFromRight>
+        <FadeInFromRight>
+          <TestimonialsCarousel />
+        </FadeInFromRight>
+      </section>
+
+      {/* ===== FOOTER ===== */}
+      <Footer />
     </div>
   );
 }
