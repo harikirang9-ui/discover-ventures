@@ -6,7 +6,7 @@ import { transactions } from "./data";
 
 export default function TransactionsPage() {
   return (
-    <div className="bg-navy min-h-screen">
+    <div className="bg-navy min-h-screen overflow-x-hidden">
       {/* Navbar */}
       <section className="bg-navy">
         <Navbar active="transactions" />

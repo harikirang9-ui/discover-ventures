@@ -56,7 +56,7 @@ const team = [
 
 export default function LeadershipPage() {
   return (
-    <div className="bg-navy">
+    <div className="bg-navy overflow-x-hidden">
       {/* Navbar */}
       <section className="bg-navy">
         <Navbar active="leadership" />

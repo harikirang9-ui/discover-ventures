@@ -50,7 +50,7 @@ export default function LeadershipCards({ team }: { team: TeamMember[] }) {
                   {member.bio.map((paragraph, i) => (
                     <p
                       key={i}
-                      className="text-navy-dark text-base md:text-lg lg:text-xl leading-relaxed lg:leading-[30px] mb-4 last:mb-0"
+                      className="text-navy-dark text-[18px] leading-relaxed mb-4 last:mb-0"
                     >
                       {paragraph}
                     </p>
@@ -62,7 +62,7 @@ export default function LeadershipCards({ team }: { team: TeamMember[] }) {
                   <h3 className="font-serif font-semibold text-navy-dark text-xl md:text-2xl lg:text-[28px] lg:leading-[47px]">
                     {member.name}
                   </h3>
-                  <p className="text-navy-dark text-base md:text-lg lg:text-xl">
+                  <p className="text-navy-dark text-[18px]">
                     {member.title}
                   </p>
                 </div>

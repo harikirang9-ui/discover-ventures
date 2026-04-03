@@ -8,9 +8,10 @@ import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+
 export default function Home() {
   return (
-    <div className="bg-background">
+    <div className="bg-background overflow-x-hidden">
       {/* ===== HERO SECTION ===== */}
       <section className="bg-navy relative overflow-hidden">
         {/* Navbar */}
@@ -25,8 +26,8 @@ export default function Home() {
               </h1>
             </FadeIn>
             <FadeIn delay={150}>
-              <p className="font-serif text-white text-2xl md:text-3xl lg:text-[52px] lg:leading-[62px] mb-18 whitespace-nowrap">
-                Your long-term fundraising partner
+              <p className="font-serif text-white text-3xl md:text-3xl lg:text-[52px] lg:leading-[62px] lg:whitespace-nowrap mb-18">
+                Your long-term<br className="lg:hidden" /> fundraising partner
               </p>
             </FadeIn>
             <FadeIn delay={300}>
@@ -37,7 +38,7 @@ export default function Home() {
             <FadeIn delay={450}>
               <a
                 href="#pitch"
-                className="inline-block bg-white text-[#233F88] text-sm md:text-base px-10 py-3 hover:bg-white/90 transition-colors"
+                className="inline-block bg-white text-[#233F88] text-base px-10 py-3 hover:bg-white/90 transition-colors"
               >
                 Share your pitch
               </a>
@@ -106,7 +107,7 @@ export default function Home() {
         <FadeIn>
           <a
             href="/transactions"
-            className="inline-block font-medium text-navy-dark text-base md:text-lg lg:text-[22px] underline mt-8 md:mt-12 hover:text-navy transition-colors"
+            className="inline-block font-medium text-navy-dark text-base underline mt-8 md:mt-12 hover:text-navy transition-colors"
           >
             View our all transactions
           </a>

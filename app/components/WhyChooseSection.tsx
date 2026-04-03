@@ -94,7 +94,7 @@ export default function WhyChooseSection() {
                   <h3 className="font-serif font-semibold text-white text-lg md:text-xl lg:text-2xl mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-white/80 text-sm md:text-base lg:text-lg leading-6 md:leading-7">
+                  <p className="text-white/80 text-base lg:text-[18px] leading-7">
                     {card.description}
                   </p>
                 </div>

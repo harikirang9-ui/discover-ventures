@@ -13,7 +13,7 @@ export default function TransactionsGrid({ transactions }: { transactions: Trans
       let result = transactions;
 
       if (filters.years.length > 0) {
-        result = result.filter((t) => filters.years.includes(t.year));
+        result = result.filter((t) => filters.years.some((y) => t.year.includes(y)));
       }
       if (filters.sectors.length > 0) {
         result = result.filter((t) => filters.sectors.includes(t.sector));
@@ -45,7 +45,7 @@ export default function TransactionsGrid({ transactions }: { transactions: Trans
         </div>
 
         {filtered.length === 0 && (
-          <p className="text-white/60 text-center text-lg py-12">
+          <p className="text-white/60 text-center text-base py-12">
             No transactions match the selected filters.
           </p>
         )}

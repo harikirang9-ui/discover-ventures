@@ -5,7 +5,7 @@ import FadeIn from "../components/FadeIn";
 
 export default function AboutPage() {
   return (
-    <div className="bg-navy">
+    <div className="bg-navy overflow-x-hidden">
       {/* Navbar */}
       <section className="bg-navy">
         <Navbar active="about" />
@@ -23,12 +23,12 @@ export default function AboutPage() {
       {/* Content */}
       <div className="px-6 md:px-16 lg:px-28 pb-12 md:pb-16 lg:pb-20">
         <FadeIn delay={150}>
-          <p className="text-white/90 text-base md:text-lg lg:text-xl leading-relaxed lg:leading-[30px] mb-6">
+          <p className="text-white/90 text-[18px] leading-relaxed mb-6">
             Discover Ventures is an investment bank specialising in raising the first institutional round for visionary founders seeking long-term growth and success. We not only advise you but also bet on you by investing from our own balance sheet. This skin-in-the-game approach makes us more committed and invested in every founder and every deal.
           </p>
         </FadeIn>
         <FadeIn delay={300}>
-          <p className="text-white/90 text-base md:text-lg lg:text-xl leading-relaxed lg:leading-[30px]">
+          <p className="text-white/90 text-[18px] leading-relaxed">
             Backed by the institutional pedigree of Dexter Capital Advisors, Discover Ventures brings founders a strategic combination of deep investor relationships, transaction integrity, and long-term partnership. We don&apos;t just close your first round; we stay in your corner for every one that follows.
           </p>
         </FadeIn>

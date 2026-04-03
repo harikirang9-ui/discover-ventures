@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+
 import { useRef, useState, useCallback } from "react";
 
 const testimonials = [
   {
-    logo: "/images/mom-logo.png",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/MOM.png",
     highlight: "\u201CTheir industry network is very wide\u201D",
     quote:
       "\u201CThis being our maiden fund raise, the Dexter team guided us through the journey with deep expertise - everything from our pitch deck, financial projections etc was patiently refined and crafted. Their industry network is very wide, and their team goes the extra mile to ensure no stone is left unturned. Special mention to Gaurav Goyal who led our round, and Devendra who is always founder first.\u201D",
@@ -14,7 +15,7 @@ const testimonials = [
     image: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Pratik%20Bhagchandka.png",
   },
   {
-    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/transactions/DeHaat.png",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/DeHaat.png",
     highlight: "\u201CTook end-to-end ownership of the fundraise process\u201D",
     quoteLines: 4,
     quote:
@@ -24,7 +25,7 @@ const testimonials = [
     image: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Shashank%20Kumar.png",
   },
   {
-    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/transactions/Easebuzz.png",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/Easebuzz.png",
     highlight: "\u201CHelped us get multiple offers\u201D",
     quote:
       "\u201CFrom the very beginning, the Dexter team understood our vision, helped refine our pitch, and connected us with the right investors. Their strategic insights and hands-on approach were key in securing multiple offers. This approach ensured that we have the space to choose the right investment partner for Easebuzz. I highly recommend them to any founder looking to navigate the fundraising journey with confidence!\u201D",
@@ -33,7 +34,7 @@ const testimonials = [
     image: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Rai%20Rohit%20Prasad.png",
   },
   {
-    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/transactions/pickrr.svg",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/pickrr.png",
     highlight: "\u201CHonored founders\u2019 interests\u201D",
     quote:
       "\u201CI found the Dexter team to be extremely professional in their approach. What really stood out to me was their deep engagement throughout the fundraise process, from the term sheet stage through to the funding close, and not just until the term sheet stage. The Dexter team played an important role during negotiation and ensured that the preferences of both founders and investors were seamlessly factored in.\u201D",
@@ -42,7 +43,7 @@ const testimonials = [
     image: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Rhitiman%20Mujumder.png",
   },
   {
-    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/transactions/Beyond%20Appliances.webp",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/beyond.png",
     highlight: "\u201CDeep understanding of the ecosystem\u201D",
     quote:
       "\u201CA big thank you to Dexter Capital for their unwavering support during our fundraising journey. They guided us through some tough roadblocks through their deep understanding of the ecosystem. Their expertise and steady advice made all the difference in closing the deal successfully. Truly grateful for their partnership and highly recommend them to anyone looking for solid fundraising support!\u201D",
@@ -51,7 +52,7 @@ const testimonials = [
     image: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/Eshwar%20K%20Vikas.png",
   },
   {
-    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/transactions/The%20Bear%20House.jpg",
+    logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/Testimonials/the%20bear%20house.png",
     highlight: "\u201CThey understood our vision\u201D",
     quote:
       "\u201CDexter Capital was the exclusive advisor to The Bear House on the transaction. We are incredibly grateful to Dexter Capital for their exceptional guidance and unwavering support in successfully closing our maiden institutional funding round. The Dexter team demonstrated professionalism, commitment, and a deep understanding of our vision, ensuring a seamless process from start to finish. We highly recommend them to any company looking for a trusted investment banking partner.\u201D",
@@ -89,10 +90,10 @@ function TestimonialModal({
           </svg>
         </button>
 
-        <p className="font-semibold text-navy-dark text-lg md:text-xl mb-1">
+        <p className="font-semibold text-navy-dark text-base mb-1">
           {t.name}
         </p>
-        <p className="text-navy-dark text-sm md:text-base mb-6">
+        <p className="text-navy-dark text-base mb-6">
           {t.title}
         </p>
         <blockquote className="font-serif font-normal text-[#333] text-[18px] leading-7 md:leading-8">
@@ -128,7 +129,7 @@ function TestimonialCard({
             <img
               src={t.logo}
               alt="Logo"
-              className="max-w-28 max-h-14 w-auto h-auto object-contain"
+              className="w-[112px] h-[56px] object-contain"
             />
           )}
         </div>
@@ -137,16 +138,14 @@ function TestimonialCard({
       {/* Quote Content */}
       <div className="flex-1 px-4 pb-6 sm:px-6 sm:pb-8 md:p-12 lg:py-14 lg:pl-14 lg:pr-6 flex flex-col justify-start">
         {/* Logo - desktop only */}
-        <div className="hidden lg:flex h-16 mb-8 items-center">
-          {t.logo && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={t.logo}
-              alt="Logo"
-              className="max-w-36 max-h-16 w-auto h-auto object-contain"
-            />
-          )}
-        </div>
+        {t.logo && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={t.logo}
+            alt="Logo"
+            className="hidden lg:block h-[48px] mb-8 self-start"
+          />
+        )}
         {t.highlight && (
           <p className="font-serif font-semibold text-navy-dark text-[18px] md:text-[22px] leading-tight mb-4">
             {t.highlight}
@@ -167,15 +166,15 @@ function TestimonialCard({
         </div>
         <button
           onClick={onReadMore}
-          className="text-[#1BAFF5] font-semibold text-sm self-start mb-6 hover:underline"
+          className="text-[#1BAFF5] font-semibold text-base self-start mb-6 hover:underline"
         >
           Read more
         </button>
         <div>
-          <p className="font-semibold text-navy-dark text-lg md:text-xl lg:text-1xl">
+          <p className="font-semibold text-navy-dark text-base">
             {t.name}
           </p>
-          <p className="text-navy-dark text-sm md:text-base lg:text-xl">
+          <p className="text-navy-dark text-base">
             {t.title}
           </p>
         </div>

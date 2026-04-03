@@ -15,6 +15,7 @@ export default function PartnershipCard({
   image,
 }: PartnershipCardProps) {
   const [visible, setVisible] = useState(false);
+  const [active, setActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,19 +39,26 @@ export default function PartnershipCard({
   return (
     <div
       ref={ref}
-      className={`bg-dark-teal h-[400px] md:h-[450px] lg:h-[510px] relative overflow-hidden group transition-opacity duration-700 ${visible ? "opacity-100" : "opacity-0"}`}
+      onClick={() => setActive(!active)}
+      className={`bg-dark-teal h-[400px] md:h-[450px] lg:h-[510px] relative overflow-hidden group cursor-pointer transition-opacity duration-700 ${visible ? "opacity-100" : "opacity-0"}`}
     >
       <Image
         src={image}
         alt={name}
         fill
-        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+        className={`object-cover transition-all duration-500 ${active ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`}
       />
       <div className="absolute bottom-0 left-0 right-0 bg-dark-teal p-4 md:p-5">
         <p className="font-serif font-semibold text-white text-xl md:text-2xl lg:text-[28px]">
           {name}
         </p>
-        <p className="text-white text-sm md:text-base lg:text-xl mt-1 max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+        <p
+          className={`text-white text-base mt-1 transition-all duration-500 overflow-hidden ${
+            active
+              ? "max-h-20 opacity-100"
+              : "max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100"
+          }`}
+        >
           {subtitle}
         </p>
       </div>

@@ -38,7 +38,7 @@ function FilterDropdown({ label, options, selected, onChange }: FilterProps) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-2 text-base md:text-lg transition-colors ${
+        className={`flex items-center gap-2 text-base transition-colors ${
           isActive ? "text-blue-accent" : "text-white"
         }`}
       >
@@ -54,12 +54,12 @@ function FilterDropdown({ label, options, selected, onChange }: FilterProps) {
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 mt-2 bg-white shadow-lg z-20 min-w-[200px]">
+        <div className="absolute top-full left-0 mt-2 bg-white shadow-lg z-20 min-w-[200px] max-h-[300px] overflow-y-auto">
           {options.map((option) => (
             <button
               key={option}
               onClick={() => toggle(option)}
-              className={`block w-full text-left px-4 py-2.5 text-sm hover:bg-gray-100 transition-colors ${
+              className={`block w-full text-left px-4 py-2.5 text-base hover:bg-gray-100 transition-colors ${
                 selected.includes(option) ? "text-blue-accent font-semibold" : "text-navy-dark"
               }`}
             >
@@ -83,9 +83,19 @@ export default function TransactionFilters({
   const [sectors, setSectors] = useState<string[]>([]);
   const [series, setSeries] = useState<string[]>([]);
 
-  const uniqueYears = [...new Set(transactions.map((t) => t.year))].sort().reverse();
+  const currentYear = new Date().getFullYear();
+  const uniqueYears = Array.from({ length: currentYear - 2015 + 1 }, (_, i) => String(currentYear - i));
   const uniqueSectors = [...new Set(transactions.map((t) => t.sector))].sort();
-  const uniqueSeries = [...new Set(transactions.map((t) => t.round))].sort();
+  const uniqueSeries = [
+    "Maiden institutional",
+    "Series A",
+    "Series B",
+    "Series C",
+    "Series D",
+    "Pre Series A",
+    "Seed round",
+    "Strategic investment",
+  ];
 
   useEffect(() => {
     onFilter({ years, sectors, series });
@@ -116,7 +126,7 @@ export default function TransactionFilters({
           {allSelected.map((item) => (
             <span
               key={item.label}
-              className="inline-flex items-center gap-1.5 bg-white/10 text-white text-sm px-3 py-1.5 rounded-full"
+              className="inline-flex items-center gap-1.5 bg-white/10 text-white text-base px-3 py-1.5 rounded-full"
             >
               {item.label}
               <button onClick={item.remove} className="hover:text-red-400 transition-colors">
@@ -128,7 +138,7 @@ export default function TransactionFilters({
           ))}
           <button
             onClick={clearAll}
-            className="text-red-400 text-sm font-semibold hover:text-red-300 transition-colors ml-2"
+            className="text-red-400 text-base font-semibold hover:text-red-300 transition-colors ml-2"
           >
             Clear all
           </button>
