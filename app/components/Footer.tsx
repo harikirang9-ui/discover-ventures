@@ -138,7 +138,7 @@ export default function Footer({ variant = "home" }: { variant?: "home" | "inner
       {/* Large Brand Name */}
       <div className="px-6 md:px-16 lg:px-28 pb-4 overflow-hidden">
         <SlideInUp>
-          <p className="font-serif text-blue-accent text-5xl sm:text-7xl md:text-8xl lg:text-[140px] xl:text-[150px] tracking-tight leading-none whitespace-nowrap">
+          <p className="font-serif text-blue-accent text-[10vw] tracking-tight leading-none whitespace-nowrap text-center">
             Discover Ventures
           </p>
         </SlideInUp>

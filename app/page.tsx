@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-background overflow-x-hidden">
+    <div className="bg-background">
       {/* ===== HERO SECTION ===== */}
       <section className="bg-navy relative overflow-hidden">
         {/* Navbar */}

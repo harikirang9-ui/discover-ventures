@@ -65,9 +65,9 @@ const cards = [
 export default function WhyChooseSection() {
   return (
     <section className="bg-navy py-16 md:py-20 lg:py-24 px-6 md:px-16 lg:px-28">
-      <div className="lg:grid lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+      <div className="md:grid md:grid-cols-[1fr_1.2fr] md:gap-16">
         {/* Left sticky title */}
-        <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center mb-10 lg:mb-0">
+        <div className="md:sticky md:top-0 md:h-screen md:flex md:items-center mb-10 md:mb-0">
           <FadeInCard>
             <h2 className="font-serif text-white text-3xl md:text-4xl lg:text-[50px] lg:leading-[58px]">
               Why choose
