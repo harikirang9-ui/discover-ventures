@@ -1,8 +1,24 @@
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FadeIn from "../components/FadeIn";
 import TransactionsGrid from "./TransactionsGrid";
 import { transactions } from "./data";
+
+export const metadata: Metadata = {
+  title: "Transactions",
+  description:
+    "Explore 90+ successful fundraising transactions worth $600Mn+ completed by Discover Ventures across sectors including agritech, logistics, fintech, and more.",
+  alternates: {
+    canonical: "https://www.discoverventures.in/transactions",
+  },
+  openGraph: {
+    title: "Transactions | Discover Ventures",
+    description:
+      "Explore 90+ successful fundraising transactions worth $600Mn+ completed by Discover Ventures.",
+    url: "https://www.discoverventures.in/transactions",
+  },
+};
 
 export default function TransactionsPage() {
   return (

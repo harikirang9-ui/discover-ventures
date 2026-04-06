@@ -8,10 +8,36 @@ import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Discover Ventures",
+  url: "https://www.discoverventures.in",
+  logo: "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/home%20page/discover%20ventures%20logo.svg",
+  description:
+    "Top-ranked investment bank in India offering fundraising advisory, investor access, and a skin-in-the-game approach for startups and growth-stage companies.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "512/10, 91Springboard, Outer Ring Road (ORR), Mahadevapura",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560048",
+    addressCountry: "IN",
+  },
+  email: "info@discoverventures.in",
+  sameAs: [
+    "https://www.dextercapital.in/",
+    "https://www.dexter.ventures/",
+  ],
+};
 
 export default function Home() {
   return (
     <div className="bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ===== HERO SECTION ===== */}
       <section className="bg-navy relative overflow-hidden">
         {/* Navbar */}

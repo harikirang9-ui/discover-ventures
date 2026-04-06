@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LeadershipCards from "../components/LeadershipCards";
+
+export const metadata: Metadata = {
+  title: "Leadership",
+  description:
+    "Meet the leadership team at Discover Ventures — experienced bankers, investors, and entrepreneurs driving fundraising success for startups across India.",
+  alternates: {
+    canonical: "https://www.discoverventures.in/leadership",
+  },
+  openGraph: {
+    title: "Leadership | Discover Ventures",
+    description:
+      "Meet the leadership team at Discover Ventures — experienced bankers and investors driving fundraising success.",
+    url: "https://www.discoverventures.in/leadership",
+  },
+};
 
 const team = [
   {

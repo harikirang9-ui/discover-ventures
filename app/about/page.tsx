@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FadeIn from "../components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Discover Ventures — a top-ranked investment bank in India helping startups and growth-stage companies raise capital through fundraising advisory and investor access.",
+  alternates: {
+    canonical: "https://www.discoverventures.in/about",
+  },
+  openGraph: {
+    title: "About Us | Discover Ventures",
+    description:
+      "Learn about Discover Ventures — a top-ranked investment bank in India helping startups raise capital.",
+    url: "https://www.discoverventures.in/about",
+  },
+};
 
 export default function AboutPage() {
   return (
