@@ -7,6 +7,7 @@ import FadeIn from "./components/FadeIn";
 import TestimonialsCarousel from "./components/TestimonialsCarousel";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SharePitchButton from "./components/SharePitchButton";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -62,12 +63,7 @@ export default function Home() {
               </p>
             </FadeIn>
             <FadeIn delay={450}>
-              <a
-                href="#pitch"
-                className="inline-block bg-white text-[#233F88] text-base px-10 py-3 hover:bg-white/90 transition-colors"
-              >
-                Share your pitch
-              </a>
+              <SharePitchButton className="inline-block bg-white text-[#233F88] text-base px-10 py-3 hover:bg-white/90 transition-colors" />
             </FadeIn>
           </div>
         </div>

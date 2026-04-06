@@ -27,10 +27,10 @@ export default function SlideInUp({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={ref}
-      className="transition-all duration-1000 ease-out"
+      className="transition-[opacity,transform] duration-1000 ease-out"
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(100%)",
+        transform: visible ? "translateY(0)" : "translateY(40px)",
       }}
     >
       {children}

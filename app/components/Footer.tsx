@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SlideInUp from "./SlideInUp";
+import SharePitchButton from "./SharePitchButton";
 
 
 export default function Footer({ variant = "home" }: { variant?: "home" | "inner" }) {
@@ -14,12 +15,7 @@ export default function Footer({ variant = "home" }: { variant?: "home" | "inner
             <p className="font-serif text-white text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-0">
               Ready to raise capital?
             </p>
-            <Link
-              href="/#pitch"
-              className="bg-white text-navy-dark font-medium text-base px-8 md:px-10 py-3 hover:bg-white/90 transition-colors"
-            >
-              Share your pitch
-            </Link>
+            <SharePitchButton className="bg-white text-navy-dark font-medium text-base px-8 md:px-10 py-3 hover:bg-white/90 transition-colors" />
           </div>
         </div>
       </div>
@@ -56,9 +52,6 @@ export default function Footer({ variant = "home" }: { variant?: "home" | "inner
               Bengaluru, Karnataka
               <br />
               560048
-            </p>
-            <p className="font-light text-base">
-              Email: info@discoverventures.in
             </p>
           </div>
 
@@ -136,9 +129,9 @@ export default function Footer({ variant = "home" }: { variant?: "home" | "inner
       </div>
 
       {/* Large Brand Name */}
-      <div className="px-6 md:px-16 lg:px-28 pb-4 overflow-hidden">
+      <div className="px-6 md:px-16 lg:px-28 pb-4">
         <SlideInUp>
-          <p className="font-serif text-blue-accent text-[10vw] tracking-tight leading-none whitespace-nowrap text-center">
+          <p className="font-serif text-blue-accent tracking-tight leading-none text-center text-[calc((100vw_-_48px)/9)] md:text-[calc((100vw_-_128px)/9)] lg:text-[calc((100vw_-_224px)/9)]">
             Discover Ventures
           </p>
         </SlideInUp>

@@ -132,10 +132,10 @@ export const transactions: Transaction[] = [
   {
     company: "Supermoney",
     sector: "FinTech",
-    round: "Investment by",
+    round: "Investment",
     investors: "Capria, Capital 2B",
     year: "June 2024",
-    amount: "",
+    amount: "$3.4mn",
     logo: `${blob}/Supermoney.png`,
   },
   {
@@ -150,20 +150,11 @@ export const transactions: Transaction[] = [
   {
     company: "OTP Less",
     sector: "SaaS",
-    round: "Investment by",
+    round: "Pre-Series A",
     investors: "SIDBI Venture, Piper Serica, VH",
     year: "May 2024",
-    amount: "",
+    amount: "$3.5mn",
     logo: `${blob}/OTP%20Less.png`,
-  },
-  {
-    company: "FruBon",
-    sector: "Consumer",
-    round: "Investment by",
-    investors: "Fireside Ventures, NDFO",
-    year: "Dec 2023",
-    amount: "",
-    logo: `${blob}/FruBon.png`,
   },
   {
     company: "Hair Originals",
@@ -202,6 +193,15 @@ export const transactions: Transaction[] = [
     logo: `${blob}/Freakins.png`,
   },
   {
+    company: "FruBon",
+    sector: "Consumer",
+    round: "Pre Series A",
+    investors: "NSFO",
+    year: "May 2022",
+    amount: "",
+    logo: `${blob}/FruBon.png`,
+  },
+  {
     company: "DeHaat",
     sector: "Agritech",
     round: "Series A",
@@ -218,6 +218,15 @@ export const transactions: Transaction[] = [
     year: "Jan 2023",
     amount: "$15mn",
     logo: `${blob}/ekincare.png`,
+  },
+  {
+    company: "FruBon",
+    sector: "Consumer",
+    round: "First round",
+    investors: "Angel round by HNIs",
+    year: "Mar 2022",
+    amount: "",
+    logo: `${blob}/FruBon.png`,
   },
   {
     company: "Prozo",

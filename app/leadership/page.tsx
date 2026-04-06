@@ -29,6 +29,7 @@ const team = [
       "With Discover Ventures, Devendra wants to reach out to and support founders on their growth trajectory with strategic financial advice, access to relevant investors, and long-term partnership.",
     ],
     linkedin: "https://www.linkedin.com/in/devendra-agrawal-cfa-85144598/",
+    x: "https://x.com/dkagarwal",
     email: "devendra.agrawal@dextercapital.in",
   },
   {

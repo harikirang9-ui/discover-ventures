@@ -5,9 +5,11 @@ import { useEffect, useRef, useState } from "react";
 export default function FadeIn({
   children,
   delay = 0,
+  className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
+  className?: string;
 }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +35,7 @@ export default function FadeIn({
   return (
     <div
       ref={ref}
-      className="transition-all duration-700 ease-out"
+      className={`transition-[opacity,transform] duration-700 ease-out ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(30px)",

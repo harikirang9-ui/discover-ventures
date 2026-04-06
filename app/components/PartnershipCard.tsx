@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface PartnershipCardProps {
@@ -40,13 +39,13 @@ export default function PartnershipCard({
     <div
       ref={ref}
       onClick={() => setActive(!active)}
-      className={`bg-dark-teal h-[400px] md:h-[450px] lg:h-[510px] relative overflow-hidden group cursor-pointer transition-opacity duration-700 ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`bg-dark-teal aspect-[4/4.8] relative overflow-hidden group cursor-pointer transition-opacity duration-700 ${visible ? "opacity-100" : "opacity-0"}`}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={image}
         alt={name}
-        fill
-        className={`object-cover transition-all duration-500 ${active ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`}
+        className={`absolute inset-0 w-full h-full object-cover object-top transition-[filter] duration-500 ${active ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`}
       />
       <div className="absolute bottom-0 left-0 right-0 bg-dark-teal p-4 md:p-5">
         <p className="font-serif font-semibold text-white text-xl md:text-2xl lg:text-[28px]">

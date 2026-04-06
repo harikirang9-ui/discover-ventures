@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
+import Providers from "./components/Providers";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -86,7 +87,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/eyu5cbq.css" />
         <link rel="icon" href="https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/favicon.png" type="image/png" />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

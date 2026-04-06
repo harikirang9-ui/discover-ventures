@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { usePitchForm } from "./PitchFormContext";
 
 export default function Navbar({ active }: { active?: string }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -37,10 +38,11 @@ export default function Navbar({ active }: { active?: string }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const { setOpen: openPitchForm } = usePitchForm();
   const currentActive = active || null;
 
   return (
-    <nav className="relative z-50 px-6 py-10 md:px-16 lg:px-28">
+    <nav className="relative z-50 px-6 py-4 md:py-6 md:px-16 lg:py-10 lg:px-28">
       <div
         className={`bg-white transition-all duration-300 ${
           isSticky
@@ -80,12 +82,12 @@ export default function Navbar({ active }: { active?: string }) {
                 )}
               </Link>
             ))}
-            <Link
-              href="/#pitch"
+            <button
+              onClick={() => openPitchForm(true)}
               className="bg-blue-accent text-white font-semibold text-base px-6 lg:px-6 py-2.5 hover:bg-blue-accent/90 transition-colors"
             >
               Share your pitch
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,13 +127,15 @@ export default function Navbar({ active }: { active?: string }) {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#pitch"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                openPitchForm(true);
+              }}
               className="bg-blue-accent text-white font-semibold text-base px-6 py-2.5 text-center hover:bg-blue-accent/90 transition-colors"
             >
               Share your pitch
-            </Link>
+            </button>
           </div>
         )}
       </div>

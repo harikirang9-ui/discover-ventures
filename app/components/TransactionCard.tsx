@@ -10,7 +10,7 @@ export interface Transaction {
 
 export default function TransactionCard({ data }: { data: Transaction }) {
   return (
-    <div className="relative">
+    <div className="relative h-full flex flex-col">
       {/* White box with logo, overlapping into the SVG curved area */}
       <div className="relative z-10">
         {/* SVG curved divider */}
@@ -39,14 +39,14 @@ export default function TransactionCard({ data }: { data: Transaction }) {
       </div>
 
       {/* Dark navy card — pulled up behind the SVG */}
-      <div className="bg-[#05153D] -mt-8 px-6 pt-16 pb-8 space-y-4">
+      <div className="bg-[#05153D] -mt-8 px-6 pt-16 pb-8 space-y-4 flex-1">
         {[
           { label: "Sector", value: data.sector },
           { label: "Round", value: data.round },
           { label: "Investors", value: data.investors },
           { label: "Year", value: data.year },
           { label: "Amount", value: data.amount },
-        ].map((item) => (
+        ].filter((item) => item.value).map((item) => (
           <div key={item.label}>
             <p className="text-[#1BAFF5] font-semibold text-base">{item.label}</p>
             <p className="text-white font-light text-base">{item.value}</p>

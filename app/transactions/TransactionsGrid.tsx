@@ -38,7 +38,7 @@ export default function TransactionsGrid({ transactions }: { transactions: Trans
       <div className="px-6 md:px-16 lg:px-28 pb-16 md:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((t, i) => (
-            <FadeIn key={i} delay={(i % 3) * 100}>
+            <FadeIn key={i} delay={(i % 3) * 100} className="h-full">
               <TransactionCard data={t} />
             </FadeIn>
           ))}
