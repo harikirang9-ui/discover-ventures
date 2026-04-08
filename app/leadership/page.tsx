@@ -47,11 +47,11 @@ const team = [
   },
   {
     name: "Mailinie Jauhar",
-    title: "Associate Director-New Initiatives",
+    title: "Associate Director",
     image:
       "https://qxjcpjrbfbjxwtjd.public.blob.vercel-storage.com/leadership/Mailinie%20Jauhar.png",
     bio: [
-      "She is a seasoned BFSI professional with 16+ years of expertise in policy, strategy, and analytics across customer lifecycles in retail products. As Vice President and Head of Business - Lending at One Mobikwik Systems Pvt Ltd, she managed the Personal Loans book, driving profitability, growth, revenue and risk initiatives, ensuring regulatory compliance.",
+      "Mailinie is a seasoned BFSI professional with 16+ years of expertise in policy, strategy, and analytics across customer lifecycles in retail products. As Vice President and Head of Business - Lending at One Mobikwik Systems Pvt Ltd, she managed the Personal Loans book, driving profitability, growth, revenue and risk initiatives, ensuring regulatory compliance.",
       "Mailinie holds a B.Tech in Textile Technology with a Minor Degree in Business Administration from the Indian Institute of Technology (IIT) Delhi. Her strong academic foundation complements her extensive professional experience, enabling her to excel in high-stakes business environments.",
     ],
     linkedin: "https://www.linkedin.com/in/mailinie/",

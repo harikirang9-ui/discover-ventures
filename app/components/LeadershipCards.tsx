@@ -54,7 +54,7 @@ export default function LeadershipCards({ team }: { team: TeamMember[] }) {
 
             {/* White content area */}
             <div className="relative bg-white flex-1">
-              <div className="flex flex-col p-6 md:py-8 md:px-8 lg:py-10 lg:px-10">
+              <div className="flex flex-col p-6 pb-20 md:py-8 md:px-8 lg:py-10 lg:px-10">
                 {/* Name + Title */}
                 <div className="mb-6 md:mb-8">
                   <h3 className="font-serif font-semibold text-navy-dark text-xl md:text-2xl lg:text-[28px] lg:leading-[47px]">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePitchForm } from "./PitchFormContext";
 
 const SECTORS = [
@@ -226,6 +226,18 @@ export default function PitchFormModal() {
     set("pitchDeck", file);
   };
 
+  // Lock background scroll when modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   if (!open) return null;
 
   const inputClass =
@@ -243,7 +255,7 @@ export default function PitchFormModal() {
   const getSelectClass = (key: string) => (errors[key] ? errorSelectClass : selectClass);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-4">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -251,7 +263,7 @@ export default function PitchFormModal() {
       />
 
       {/* Modal */}
-      <div className="relative bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl">
+      <div className="relative bg-white w-full max-w-2xl h-full md:h-auto md:max-h-[90vh] overflow-y-auto rounded-none md:rounded-2xl shadow-2xl overscroll-contain">
         {/* Header */}
         <div className="sticky top-0 bg-white z-10 px-6 md:px-8 pt-6 pb-4 border-b border-gray-100">
           <div className="flex items-center justify-between mb-5">
